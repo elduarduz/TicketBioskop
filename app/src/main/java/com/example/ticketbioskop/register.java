@@ -7,87 +7,91 @@ import android.net.ConnectivityManager;
 
 import android.os.Bundle;
 
+import android.os.PersistableBundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class register extends AppCompatActivity {
 
-    ProgressDialog pDialog;
-    Button btn_register, btn_login;
-    EditText txt_username, txt_password, txt_confirm_password;
-    Intent intent;
-
-    int success;
-    ConnectivityManager conMgr;
-
-    private String url = Server.URL + "register.php";
-
-    private static final String TAG = register.class.getSimpleName();
-
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_MESSAGE = "message";
-
-    String tag_json_obj = "json_obj_req";
+    EditText tUsername, tEmail, tPassword, tConfirmPassword;
+    Button tombolRegis;
+    TextView tombolLogin;
+    FirebaseAuth firebaseAuth;
+    ProgressBar progressBar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        {
-            if (conMgr.getActiveNetworkInfo() != null
-                    && conMgr.getActiveNetworkInfo().isAvailable()
-                    && conMgr.getActiveNetworkInfo().isConnected()) {
-            } else {
-                Toast.makeText(getApplicationContext(), "No Internet Connection",
-                        Toast.LENGTH_LONG).show();
-            }
+        tUsername = findViewById(R.id.txt_username);
+        tEmail = findViewById(R.id.txt_email);
+        tPassword = findViewById(R.id.txt_password);
+        tConfirmPassword = findViewById(R.id.txt_confirm_password);
+        tombolRegis = findViewById(R.id.btn_register);
+        tombolLogin = findViewById(R.id.jump_login);
+
+        firebaseAuth =  FirebaseAuth.getInstance();
+        progressBar = findViewById(R.id.progressBar);
+
+        if (firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), Home.class));
+            finish();
         }
 
-        btn_login = (Button) findViewById(R.id.btn_login);
-        btn_register = (Button) findViewById(R.id.btn_register);
-        txt_username = (EditText) findViewById(R.id.txt_username);
-        txt_password = (EditText) findViewById(R.id.txt_password);
-        txt_confirm_password = (EditText) findViewById(R.id.txt_confirm_password);
-
-        btn_login.setOnClickListener(new View.OnClickListener() {
-
+        tombolRegis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                intent = new Intent(register.this, btn_login.class);
-                finish();
-                startActivity(intent);
-            }
-        });
+                String email = tEmail.getText().toString().trim();
+                String password = tPassword.getText().toString().trim();
+                String confPass = tConfirmPassword.getText().toString().trim();
 
-        btn_register.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                String username = txt_username.getText().toString();
-                String password = txt_password.getText().toString();
-                String confirm_password = txt_confirm_password.getText().toString();
-
-                if (conMgr.getActiveNetworkInfo() != null
-                        && conMgr.getActiveNetworkInfo().isAvailable()
-                        && conMgr.getActiveNetworkInfo().isConnected()) {
-                    checkRegister(username, password, confirm_password);
-                } else {
-                    Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(email)){
+                    tEmail.setError("Email harus di isi!!");
+                    return;
                 }
+                if (TextUtils.isEmpty(password)){
+                    tPassword.setError("Password harus di isi!!");
+                    return;
+                }
+                if (password.length() < 7){
+                    tPassword.setError("Password minimal harus 8 karakter atau lebih");
+                    return;
+                }
+                if (!password.equals(confPass)){
+                    tConfirmPassword.setError("Konfirmasi Password salah!!");
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(register.this, "Akun telah dibuat", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Home.class));
+                        }else{
+                            Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
-
     }
-
-
 }
