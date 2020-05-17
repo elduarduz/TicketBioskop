@@ -4,33 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90949C"
+    android:background="#FFFFFF"
     tools:context=".LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TicketMuvie"
+        android:text="Ticket"
         android:layout_centerHorizontal="true"
         android:textSize="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="70dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Muvie"
+        android:textColor="#FA1433"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:layout_marginTop="110dp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
-        android:text="Welcome, Back"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="60dp"
+        android:text="Welcome Back,"
         android:textSize="20dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="60dp"
+        android:text="Login for Continue"
+        android:textSize="14dp"/>
 
     <EditText
         android:id="@+id/isi_email"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="235dp"
-        android:background="#ffffff"
+        android:layout_marginTop="270dp"
+        android:background="#D8D8D8"
         android:layout_centerHorizontal="true"
         android:hint=" Email"
         app:layout_constraintTop_toTopOf="parent"
@@ -43,8 +60,8 @@
         android:layout_centerHorizontal="true"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="305dp"
-        android:background="#ffffff"
+        android:layout_marginTop="330dp"
+        android:background="#D8D8D8"
         android:hint=" Password"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="55dp" />
