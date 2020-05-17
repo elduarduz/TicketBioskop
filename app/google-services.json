@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "237180426567",
-    "firebase_url": "https://ticket-bioskop-97024.firebaseio.com",
-    "project_id": "ticket-bioskop-97024",
-    "storage_bucket": "ticket-bioskop-97024.appspot.com"
+    "project_number": "713787932053",
+    "firebase_url": "https://ticket-bioskop-c9f8c.firebaseio.com",
+    "project_id": "ticket-bioskop-c9f8c",
+    "storage_bucket": "ticket-bioskop-c9f8c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:237180426567:android:5bb03092ccb0d587215462",
+        "mobilesdk_app_id": "1:713787932053:android:9b91ae49a9493b9c29ca9c",
         "android_client_info": {
           "package_name": "com.example.ticketbioskop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "237180426567-aqj228sh28fbchoduldttb59lenkn0rm.apps.googleusercontent.com",
+          "client_id": "713787932053-0s43p3d880drues7jf67kqrct2rqvg6g.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.ticketbioskop",
-            "certificate_hash": "694c7992cbafb46bf1648b5a8c12355bc0d7a6c4"
+            "certificate_hash": "352c192a73a03a825d15b2bb02725c8c4c215ca2"
           }
         },
         {
-          "client_id": "237180426567-hpc4sc5tfug5em2vn788vno8fn5e4vis.apps.googleusercontent.com",
+          "client_id": "713787932053-svjcpfn2tp209eoaujgcfp4fdvahr91t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAlnEhg2R8lz8JK6kW8Q7adwlZMQEsAC8I"
+          "current_key": "AIzaSyBGPvPMwKlpKuJ-ovKEHwz9KrQZdT9Nois"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "237180426567-hpc4sc5tfug5em2vn788vno8fn5e4vis.apps.googleusercontent.com",
+              "client_id": "713787932053-svjcpfn2tp209eoaujgcfp4fdvahr91t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

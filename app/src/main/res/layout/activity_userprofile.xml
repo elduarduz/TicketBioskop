@@ -9,25 +9,78 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
         android:text="Profil"
-        android:layout_centerHorizontal="true"
         android:textSize="25dp"
-        android:layout_marginTop="270dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/profilepng" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="175dp"
+        android:text="Nama Profil"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="175dp"
+        android:text="Rp. Saldo"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="125dp"
-        android:layout_height="25dp"
+        android:id="@+id/btn_topup"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="275dp"
+        android:background="#FFB266"
+        android:text="TopUp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:onClick="topup"/>
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="450dp"
+        android:background="#FF007F"
+        android:text="Edit Profile"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:onClick="Edit Profile"/>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
         android:background="#FFB266"
         android:text="LOGOUT"
         android:textColor="#fff"
         android:textStyle="bold"
         android:onClick="logout"/>
+
+
 
 </RelativeLayout>
