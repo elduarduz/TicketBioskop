@@ -5,26 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAF8F8"
-    tools:context=".Home">
+    tools:context=".userprofile">
 
-    <ImageView
-        android:id="@+id/profile_button"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:onClick="profil"
-        android:src="@drawable/profilepng"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home"
+        android:text="Profil"
         android:layout_centerHorizontal="true"
         android:textSize="25dp"
         android:layout_marginTop="270dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="125dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:background="#FFB266"
+        android:text="LOGOUT"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:onClick="logout"/>
 
 </RelativeLayout>

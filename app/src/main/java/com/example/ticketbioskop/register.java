@@ -54,6 +54,13 @@ public class register extends AppCompatActivity {
             finish();
         }
 
+        tombolLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            }
+        });
+
         tombolRegis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +92,7 @@ public class register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(register.this, "Akun telah dibuat", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), Home.class));
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         }else{
                             Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -93,5 +100,12 @@ public class register extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    public void openLogin(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
+        Toast.makeText(register.this, "Masukkan Email dan Password!!", Toast.LENGTH_LONG).show();
     }
 }

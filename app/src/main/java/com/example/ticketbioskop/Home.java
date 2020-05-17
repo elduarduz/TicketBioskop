@@ -16,9 +16,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.homelayout);
     }
 
-    public void logout(View view){
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+    public void profil(View view){
+        startActivity(new Intent(getApplicationContext(), userprofile.class));
         finish();
     }
 }
