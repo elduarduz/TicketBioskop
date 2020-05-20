@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAF8F8"
-    tools:context=".userprofile">
+    tools:context=".Topup">
+
 
 
     <TextView
@@ -13,74 +14,69 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="30dp"
-        android:text="Profil"
+        android:text="TopUp Menu"
         android:textSize="25dp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/profile_img"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="110dp"
-        android:src="@drawable/profilepng" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:layout_marginLeft="175dp"
-        android:text="Nama Profil"
-        android:textSize="25dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="45dp"
+        android:text="Saldo Sekarang :"
+        android:textSize="35dp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:layout_marginLeft="175dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="45dp"
         android:text="Rp. Saldo"
-        android:textSize="20dp"
+        android:textSize="50dp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_topup"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginLeft="275dp"
+        android:id="@+id/btn_50k"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="75dp"
         android:background="#FFB266"
-        android:text="TopUp"
+        android:text="+ Rp 50.000"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:onClick="isiulang"/>
+        android:onClick="50k"/>
 
     <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="250dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
-        android:background="#FF007F"
-        android:text="Edit Profile"
+        android:id="@+id/btn_100k"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="215dp"
+        android:background="#FFB266"
+        android:text="+ Rp 100.000"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:onClick="editProfile"/>
+        android:onClick="100k"/>
+
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/btn_back"
         android:layout_width="250dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        android:background="#FFB266"
-        android:text="LOGOUT"
+        android:background="#FF007F"
+        android:text="Back"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:onClick="logout"/>
+        android:onClick="back"/>
+
 
 
 
 </RelativeLayout>
+

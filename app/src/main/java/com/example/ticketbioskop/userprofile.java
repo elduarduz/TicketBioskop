@@ -24,10 +24,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class userprofile extends AppCompatActivity {
 
+    private View view;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
+    }
+
+    public void topup(View view){
+        startActivity(new Intent(getApplicationContext(), Topup.class));
+        finish();
     }
 
     public void logout(View view){
@@ -35,5 +42,17 @@ public class userprofile extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
+
+
+    public void editProfile(View view){
+        startActivity(new Intent(getApplicationContext(), Home.class));
+        finish();
+    }
+
+    public void isiulang(View view) {
+        startActivity(new Intent(getApplicationContext(), Topup.class));
+        finish();
+    }
+
 }
 
