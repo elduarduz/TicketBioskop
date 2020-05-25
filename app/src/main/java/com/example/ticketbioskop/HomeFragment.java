@@ -1,4 +1,4 @@
-package com.example.ticketbioskop.MainFragments;
+package com.example.ticketbioskop;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

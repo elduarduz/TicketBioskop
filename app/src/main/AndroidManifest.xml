@@ -14,7 +14,7 @@
         <activity android:name=".Topup"/>
         <activity android:name=".userprofile" />
         <activity android:name=".Home" />
-        <activity android:name=".MainFragments.HomeFragment"/>
+        <activity android:name=".HomeFragment"/>
         <activity android:name=".register"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
