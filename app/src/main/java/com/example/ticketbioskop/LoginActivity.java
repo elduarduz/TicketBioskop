@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ticketbioskop.MainFragments.HomeFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Berhasil Login!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), Home.class));
+                            startActivity(new Intent(getApplicationContext(), HomeFragment.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -79,8 +80,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void openRegis() {
-        Intent intent = new Intent(this, register.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, register.class);
+        startActivity(new Intent(getApplicationContext(),register.class));
+        finish();
 
         Toast.makeText(LoginActivity.this, "Lakukan Pendaftaran", Toast.LENGTH_LONG).show();
     }

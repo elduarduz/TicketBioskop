@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ticketbioskop.MainFragments.HomeFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -43,21 +44,21 @@ public class register extends AppCompatActivity {
         tEmail = findViewById(R.id.txt_email);
         tPassword = findViewById(R.id.txt_password);
         tConfirmPassword = findViewById(R.id.txt_confirm_password);
-        tombolRegis = findViewById(R.id.btn_register);
+        tombolRegis = findViewById(R.id.registrasi);
         tombolLogin = findViewById(R.id.jump_login);
 
         firebaseAuth =  FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
 
         if (firebaseAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), Home.class));
+            startActivity(new Intent(getApplicationContext(), HomeFragment.class));
             finish();
         }
 
         tombolLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), register.class));
             }
         });
 
@@ -103,8 +104,8 @@ public class register extends AppCompatActivity {
     }
 
     public void openLogin(){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(new Intent(getApplicationContext(), register.class));
 
         Toast.makeText(register.this, "Masukkan Email dan Password!!", Toast.LENGTH_LONG).show();
     }
