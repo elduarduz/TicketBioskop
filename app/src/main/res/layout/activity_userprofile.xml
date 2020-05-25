@@ -75,7 +75,7 @@
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        android:background="#FFB266"
+        android:background="@color/beer"
         android:text="LOGOUT"
         android:textColor="#fff"
         android:textStyle="bold"

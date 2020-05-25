@@ -71,8 +71,7 @@
         android:layout_marginTop="50dp"
         android:text="LOG IN"
         android:textStyle="bold"
-        android:background="@color/beer"
-        android:onClick="login"/>
+        android:background="@color/beer"/>
 
 
     <TextView
@@ -84,7 +83,6 @@
         android:clickable="true"
         android:textColor="@color/black"
         android:gravity="center"
-        android:onClick="registrasi"
         android:text="Belum Punya Akun? Registrasi"
         android:textSize="12dp" />
 
