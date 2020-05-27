@@ -45,15 +45,6 @@ public class register extends AppCompatActivity {
         tConfirmPassword = findViewById(R.id.txt_confirm_password);
         tombolRegis = findViewById(R.id.btn_register);
         tombolLogin = findViewById(R.id.jump_login);
-
-        firebaseAuth =  FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
-
-        if (firebaseAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), Home.class));
-            finish();
-        }
-
         tombolLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +83,8 @@ public class register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(register.this, "Akun telah dibuat", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                            startActivity(new Intent(getApplicationContext(), Home.class));
+                            finishAffinity();
                         }else{
                             Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
