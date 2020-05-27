@@ -45,7 +45,7 @@ public class userprofile extends AppCompatActivity {
 
 
     public void editProfile(View view){
-        startActivity(new Intent(getApplicationContext(), Home.class));
+        startActivity(new Intent(getApplicationContext(), HomeFragment.class));
         finish();
     }
 

@@ -9,6 +9,6 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Home extends AppCompatActivity {
-
-}
+//public class Home extends AppCompatActivity {
+//
+//}

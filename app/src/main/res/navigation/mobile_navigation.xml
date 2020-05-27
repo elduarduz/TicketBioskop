@@ -3,11 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/navigation_home">
+
+<!--    <fragment-->
+<!--        android:id="@+id/mainFragment"-->
+<!--        android:name="com.example.ticketbioskop.HomeActivity"-->
+<!--        android:label="fragment_main"-->
+<!--        tools:layout="@layout/activity_main_fragment" />-->
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/navigation_home"
         android:name="com.example.ticketbioskop.HomeFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/activity_main_fragment" />
+        android:label="home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_poin"
+        android:name="com.example.ticketbioskop.PoinFragment"
+        android:label="poin"
+        tools:layout="@layout/fragment_poin" />
+
 </navigation>
