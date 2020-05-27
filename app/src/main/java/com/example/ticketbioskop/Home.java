@@ -15,9 +15,4 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homelayout);
     }
-
-    public void profil(View view){
-        startActivity(new Intent(getApplicationContext(), userprofile.class));
-        finish();
-    }
 }
