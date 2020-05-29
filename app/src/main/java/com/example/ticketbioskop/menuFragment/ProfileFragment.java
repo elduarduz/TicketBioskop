@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
  */
 public class ProfileFragment extends Fragment {
 
+    private Fragment newFragment;
+
     public ProfileFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -31,6 +35,17 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View v  = inflater.inflate(R.layout.fragment_profile, container, false);
         Button LogoutButton = v.findViewById(R.id.btn_logout);
+
+
+        Button topUpbutton = v.findViewById(R.id.btn_topup);
+
+        topUpbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                topap();
+            }
+        });
+
         LogoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +54,12 @@ public class ProfileFragment extends Fragment {
         });
         return v;
     }
+
+    public void topap(){
+        startActivity(new Intent(getActivity(), Topup.class));
+        getActivity().finishAffinity();
+    }
+
 
     public void logout(){
         FirebaseAuth.getInstance().signOut();
