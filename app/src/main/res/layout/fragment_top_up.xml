@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF8F8"
-    tools:context=".menuFragment.Topup">
-
+    tools:context=".menuFragment.topUpFragment">
 
 
     <TextView
@@ -24,31 +21,42 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="135dp"
         android:layout_marginLeft="45dp"
-        android:text="Masukkan Saldo :"
+        android:text="Saldo Sekarang :"
         android:textSize="35dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/kolom_saldo"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="195dp"
         android:layout_marginLeft="45dp"
-        android:textColor="@color/dimgrey"
+        android:text="Rp. Saldo"
         android:textSize="50dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_nambah"
-        android:layout_width="160dp"
+        android:id="@+id/btn_50k"
+        android:layout_width="125dp"
         android:layout_height="50dp"
-        android:layout_marginTop="315dp"
-        android:layout_marginLeft="130dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="75dp"
         android:background="#FFB266"
-        android:text="Tambah"
+        android:text="+ Rp 50.000"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:onClick="tambah"/>
+        android:onClick="50k"/>
+
+    <Button
+        android:id="@+id/btn_100k"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="215dp"
+        android:background="#FFB266"
+        android:text="+ Rp 100.000"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:onClick="100k"/>
 
 
     <Button
@@ -63,9 +71,4 @@
         android:textColor="#fff"
         android:textStyle="bold"
         android:onClick="back"/>
-
-
-
-
-</RelativeLayout>
-
+</FrameLayout>

@@ -17,5 +17,18 @@
         android:id="@+id/profileFragment"
         android:name="com.example.ticketbioskop.menuFragment.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/topup_way"
+            app:destination="@id/topUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topUpFragment"
+        android:name="com.example.ticketbioskop.menuFragment.topUpFragment"
+        android:label="fragment_top_up"
+        tools:layout="@layout/fragment_top_up" >
+        <action
+            android:id="@+id/topupfinished"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>
