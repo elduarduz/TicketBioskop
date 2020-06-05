@@ -8,15 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
-
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CinemasCopy extends ListActivity {
+public class Cinemas extends ListActivity {
 
-	public static final String EXTRA_MESSAGE ="movie.demo.MOVIENAME";
+	public  static final String EXTRA_MESSAGE ="movie.demo.MESSAGE";
 	public static final String EXTRA_ID ="movie.demo._ID";
 	public static final String EXTRA_IMAGE ="movie.demo.MESSAGE1";
 	public static final String EXTRA_MSG = "movie.demo.MESSAGE2";
@@ -27,84 +27,87 @@ public class CinemasCopy extends ListActivity {
 	public static final String EXTRA_RATING ="movie.demo.MESSAGE7";
 	public static final String EXTRA_VIDEO="movie.demo.MESSAGE8";
 	public static final String EXTRA_CINEMA="movie.demo.MESSAGE9";
-
+	public static final String EXTRA_NAMEMOVIE ="movie.demo.MOVIENAME";
+	
 	ArrayList<String> movie_names;
 	ArrayList<String> poster;
-
+	String movieNames;
+	
 	String i;
 	Intent intent;
-
+	
 	DatabaseHandler handler;
 	ListView list;
-
-	Button cinemaButton;
-
+	
+	TextView movieName;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.copy_activity_cinemas);
-		cinemaButton= findViewById(R.id.cinemaButton);
-
-		handler=new DatabaseHandler(this);
-
+		setContentView(R.layout.activity_cinemas);handler=new DatabaseHandler(this);
+		
 		movie_names=handler.getValues();
 		poster=handler.getImages();
-
-
+		
+		
 		setListAdapter(new MyAdapter());
 	}
-
+	
 	public class MyAdapter extends ArrayAdapter<String>
 	{
 		public MyAdapter()
 		{
-			super(CinemasCopy.this, R.layout.copy_list_row,movie_names);
+			super(Cinemas.this,R.layout.list_row,movie_names);
 		}
-
+		
 		public View getView(int position,View convertView,ViewGroup parent)
 		{
 			View row=convertView;
-			RecyclerView.ViewHolder holder=null;
+			ViewHolder holder=null;
 			if(row==null)
 			{
 				LayoutInflater inflater=getLayoutInflater();
-				row=inflater.inflate(R.layout.copy_list_row, null);
-				holder=new RecyclerView.ViewHolder(row);
+				row=inflater.inflate(R.layout.list_row, null);
+				holder=new ViewHolder(row);
 				row.setTag(holder);
 			}
 			else
 			{
-				holder=(RecyclerView.ViewHolder)row.getTag();
+				holder=(ViewHolder)row.getTag();
 			}
-
+			
 			i = poster.get(position);
-
-			int idd = CinemasCopy.this.getResources().getIdentifier(i, "drawable", getPackageName());
-
+			
+			int idd = Cinemas.this.getResources().getIdentifier(i, "drawable", getPackageName());
+			
 			holder.poster.setImageResource(idd);
-
-			holder.movieName.setText(movie_names .get(position));
-
+			
+			holder.movieName.setText(movie_names.get(position));
+			
 			row.setBackgroundResource(R.drawable.list_design);
-
+			
+		
+			
 			return row;
 		}
-	}
 
-	/*public class ViewHolder
+		
+	}
+	
+	public class ViewHolder
 	{
 		ImageView poster;
 		TextView movieName;
 		Button bookButton;
 		ViewHolder(View v)
 		{
-			poster= v.findViewById(R.id.poster);
-			movieName= v.findViewById(R.id.movieName);
-
-
+			poster=(ImageView)v.findViewById(R.id.poster);
+			movieName=(TextView)v.findViewById(R.id.movieName);
+			bookButton=(Button)v.findViewById(R.id.bookButton);
+			
 		}
-	}*/
-	/*public void onListItemClick(ListView l,View v,int position,long id)
+	}
+	public void onListItemClick(ListView l,View v,int position,long id)
 	{
 		intent=new Intent(this,DetailsActivity.class);
 		handler.getDetails(id);
@@ -118,21 +121,10 @@ public class CinemasCopy extends ListActivity {
 		intent.putExtra(EXTRA_LANG, String.valueOf(handler.getLang()));
 		intent.putExtra(EXTRA_RATING, handler.getRating());
 		intent.putExtra(EXTRA_VIDEO, handler.getVideo());
-
-
-
-		startActivity(intent);*/
-
+		
+		startActivity(intent);
+		
 	}
 
-//	public void cinemaBook(View v)
-//	{
-//		intent=new Intent(this,CopyMainActivity.class);
-//		intent.putExtra(EXTRA_MESSAGE,String.valueOf(handler.getName()));
-//		startActivity(intent);
-//
-//	}
-
-
-
-
+	
+}
