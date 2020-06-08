@@ -24,12 +24,13 @@
         android:src="@drawable/profilepng" />
 
     <TextView
+        android:id="@+id/nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="140dp"
         android:layout_marginLeft="175dp"
         android:text="Nama Profil"
-        android:textSize="25dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <TextView
@@ -47,7 +48,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="165dp"
         android:layout_marginLeft="275dp"
-        android:background="#FFB266"
+        android:backgroundTint="@color/red"
         android:text="TopUp"
         android:textColor="#fff"
         android:textStyle="bold"
@@ -73,7 +74,7 @@
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        android:background="#FFB266"
+        android:backgroundTint="#FFB266"
         android:text="LOGOUT"
         android:textColor="#fff"
         android:textStyle="bold"

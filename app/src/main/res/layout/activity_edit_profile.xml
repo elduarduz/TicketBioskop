@@ -68,7 +68,7 @@
             android:layout_marginTop="65dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#E41B17"
+            android:backgroundTint="#E41B17"
             android:text="kembali"
             android:textColor="#fff"
             android:textStyle="bold" />
