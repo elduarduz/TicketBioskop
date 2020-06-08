@@ -1,13 +1,7 @@
 package com.example.ticketbioskop;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-
 import android.os.Bundle;
-
-import android.os.PersistableBundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +32,7 @@ public class register extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         tUsername = findViewById(R.id.txt_username);
         tEmail = findViewById(R.id.txt_email);
@@ -76,17 +71,15 @@ public class register extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
-
-                firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                firebaseAuth.createUserWithEmailAndPassword(email,password) .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(register.this, "Akun telah dibuat", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(register.this, "Akun Telah Dibuat!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), Home.class));
-                            finishAffinity();
-                        }else{
-                            Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(register.this, "Error!" + task.getException() , Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

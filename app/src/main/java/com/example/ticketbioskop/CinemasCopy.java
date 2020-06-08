@@ -69,7 +69,7 @@ public class CinemasCopy extends ListActivity {
 			{
 				LayoutInflater inflater=getLayoutInflater();
 				row=inflater.inflate(R.layout.copy_list_row, null);
-				holder=new RecyclerView.ViewHolder(row);
+//				holder=new RecyclerView.ViewHolder(row);
 				row.setTag(holder);
 			}
 			else
@@ -81,9 +81,9 @@ public class CinemasCopy extends ListActivity {
 
 			int idd = CinemasCopy.this.getResources().getIdentifier(i, "drawable", getPackageName());
 
-			holder.poster.setImageResource(idd);
-
-			holder.movieName.setText(movie_names .get(position));
+//			holder.poster.setImageResource(idd);
+//
+//			holder.movieName.setText(movie_names .get(position));
 
 			row.setBackgroundResource(R.drawable.list_design);
 
