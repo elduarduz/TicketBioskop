@@ -64,7 +64,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         android:background="#FF007F"
-        android:text="Edit Profile"
+        android:text="Change Password"
         android:textColor="#fff"
         android:textStyle="bold"
         android:onClick="editProfile"/>

@@ -36,6 +36,7 @@ public class ProfileFragment extends Fragment {
         View v  = inflater.inflate(R.layout.fragment_profile, container, false);
         Button LogoutButton = v.findViewById(R.id.btn_logout);
 
+        Button editProfile = v.findViewById(R.id.btn_edit);
 
         Button topUpbutton = v.findViewById(R.id.btn_topup);
 
@@ -43,6 +44,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 topap();
+            }
+        });
+
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editPass();
             }
         });
 
@@ -57,6 +65,11 @@ public class ProfileFragment extends Fragment {
 
     public void topap(){
         startActivity(new Intent(getActivity(), Topup.class));
+        getActivity().finishAffinity();
+    }
+
+    public void editPass(){
+        startActivity(new Intent(getActivity(), editProfile.class));
         getActivity().finishAffinity();
     }
 

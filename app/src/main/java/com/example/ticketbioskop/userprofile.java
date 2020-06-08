@@ -16,7 +16,7 @@ public class userprofile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userprofile);
+        setContentView(R.layout.fragment_profile);
     }
 
     public void topup(View view){
