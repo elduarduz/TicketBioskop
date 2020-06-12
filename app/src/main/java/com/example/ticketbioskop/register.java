@@ -44,6 +44,7 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                Toast.makeText(register.this, "Masukkan Email dan Password!!", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -87,10 +88,10 @@ public class register extends AppCompatActivity {
         });
     }
 
-    public void openLogin(){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-
-        Toast.makeText(register.this, "Masukkan Email dan Password!!", Toast.LENGTH_LONG).show();
-    }
+//    public void openLogin(){
+//        Intent intent = new Intent(this, LoginActivity.class);
+//        startActivity(intent);
+//
+//        Toast.makeText(register.this, "Masukkan Email dan Password!!", Toast.LENGTH_LONG).show();
+//    }
 }
